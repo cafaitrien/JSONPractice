@@ -9,7 +9,6 @@ let house = {
   let container = document.querySelector("div#container");
 
 for (let key in house){
-  console.log("Key: ", key, " value: ", house[key]);
   let p = document.createElement("p");
   p.innerHTML = key + ": " + house[key];
   //append it to the body
