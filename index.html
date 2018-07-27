@@ -14,20 +14,24 @@
     </head>
     <body>
       <h1>this is a tree</h1>
-      <form>
-        Roof Type:<br>
-        <input type="text" name="roof"><br><br>
-        Number of bedrooms:<br>
-        <input type="number" name="bedrooms"><br><br>
-        Number of bathrooms:<br>
-        <input type="number" name="bathrooms"><br><br>
-        <input type="radio" name="sqft" value="900" checked> 900 sq ft.<br>
-        <input type="radio" name="sqft" value="1400"> 1400  sq ft.<br>
-        <input type="radio" name="sqft" value="2500">  2500 sq ft.<br><br>
-
-        <input type="radio" name="hasYard" value="true" checked> Yes<br>
-        <input type="radio" name="hasYard" value="false"> No <br><br>
-
+      <form name="NewHouse">
+        <label>Roof Type:
+        <input type="text" name="roof"></label><br><br>
+        <label>Exterior Type:
+        <input type="text" name="exterior"></label><br><br>
+        <label>Number of bedrooms:
+        <input type="number" name="bedrooms"></label><br><br>
+        <label>Number of bathrooms:
+        <input type="number" name="bathrooms"></label><br><br>
+        <label> Approximate square footage of the home. <br>
+          <input type="radio" name="sqft" value="900" checked> 900 sq ft.<br>
+          <input type="radio" name="sqft" value="1400"> 1400  sq ft.<br>
+          <input type="radio" name="sqft" value="2500">  2500 sq ft.<br><br>
+        </label>
+        <label>Does the home have a yard? <br>
+          <input type="radio" name="hasYard" value="true" checked> Yes<br>
+          <input type="radio" name="hasYard" value="false"> No <br><br>
+        </label>
         <input type="submit" value="Submit">
       </form>
 
