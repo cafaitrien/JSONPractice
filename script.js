@@ -26,14 +26,17 @@ neighborhood = [
 
 let neighborType = ["is Awesome", "is great", "is fantastic", "very Disneyesque", "is Terrible", "talks A LOT", "yells at people walking on the sidewalk"];
 // TODO Randomly name our neighbors from potentially from external site to give us a wide choice of names
-for(let i=0; i<neighborhood.length; i++){
+function drawNeighborhood(){
   let container = document.querySelector("div#container");
+  container.innerHTML = "";
+  for(let i=0; i<neighborhood.length; i++){
+
   let divider = document.createElement("p");
   divider.style.backgroundColor = "limegreen"
   divider.innerHTML = "This neighbor " + neighborType[Math.floor(neighborType.length*Math.random())];
   container.appendChild(divider);
   build(neighborhood[i], container);
-
+}
 }
 
 function build(obj, container){
@@ -79,13 +82,28 @@ form.addEventListener("submit", function(event){
   if(isNaN(newSqft)){
     errorMessages += "sqft is required";
   }
-  let newHasYard = parseInt(this.hasYard.value);
+  let newHasYard = this.hasYard.value;
   if(isNaN(newHasYard)){
     errorMessages += "Has Yard is required";
   }
+  console.log(errorMessages)
+  if(errorMessages !== ""){
+    //print to page, return
+    let p = document.createElement("p");
+    p.innerHTML = errorMessages;
+    return;
+  }
+  else{
+    //clear form fields
+    //create object, put in neighborhood
+    const newHouse = {
+    exterior: newExterior,
+    roof: newRoof,
+    bedrooms: newBedrooms,
+    bathrooms: newBathrooms,
+    sqft: newSqft,
+    hasYard: newHasYard};
+  }
 })
-// validate fields, numbers not negative, are numbers
-// sqft hasYard required
-//rooms <= 5
 
 //build new house and insert in neighborhood if good
