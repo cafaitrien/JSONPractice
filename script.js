@@ -38,12 +38,15 @@ for(let i=0; i<neighborhood.length; i++){
 function build(obj, container){
   let div = document.createElement("div");
   div.classList.add("house");
+  div.style.border = "thick solid green";
 
   for (let key in obj){
     let p = document.createElement("p");
     p.innerHTML = key + ": " + obj[key];
+
     //append it to the body
     div.appendChild(p)
+
 
   }
   container.appendChild(div);
