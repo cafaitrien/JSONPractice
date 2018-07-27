@@ -6,7 +6,7 @@ bathrooms: 2,
 sqft: 1200,
 hasYard: true};
 
-neightborhood = [
+neighborhood = [
   house,
   {
   exterior: "brick",
@@ -24,13 +24,27 @@ neightborhood = [
   hasYard: false}
 ];
 
-function build(obj){
+let neighborType = ["is Awesome", "is great", "is fantastic", "very Disneyesque", "is Terrible", "talks A LOT", "yells at people walking on the sidewalk"];
+for(let i=0; i<neighborhood.length; i++){
   let container = document.querySelector("div#container");
+  let divider = document.createElement("p");
+  divider.style.backgroundColor = "limegreen"
+  divider.innerHTML = "This neighbor " + neighborType[Math.floor(neighborType.length*Math.random())];
+  container.appendChild(divider);
+  build(neighborhood[i], container);
+
+}
+
+function build(obj, container){
+  let div = document.createElement("div");
+  div.classList.add("house");
 
   for (let key in obj){
     let p = document.createElement("p");
     p.innerHTML = key + ": " + obj[key];
     //append it to the body
-    container.appendChild(p);
+    div.appendChild(p)
+
   }
+  container.appendChild(div);
 }
