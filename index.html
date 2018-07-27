@@ -14,6 +14,23 @@
     </head>
     <body>
       <h1>this is a tree</h1>
+      <form>
+        Roof Type:<br>
+        <input type="text" name="roof"><br><br>
+        Number of bedrooms:<br>
+        <input type="number" name="bedrooms"><br><br>
+        Number of bathrooms:<br>
+        <input type="number" name="bathrooms"><br><br>
+        <input type="radio" name="sqft" value="900" checked> 900 sq ft.<br>
+        <input type="radio" name="sqft" value="1400"> 1400  sq ft.<br>
+        <input type="radio" name="sqft" value="2500">  2500 sq ft.<br><br>
+
+        <input type="radio" name="hasYard" value="true" checked> Yes<br>
+        <input type="radio" name="hasYard" value="false"> No <br><br>
+
+        <input type="submit" value="Submit">
+      </form>
+
       <div id="container"></div>
       <script src="script.js"></script>
     </body>
